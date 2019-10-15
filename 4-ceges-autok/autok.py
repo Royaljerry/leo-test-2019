@@ -22,15 +22,16 @@ else:
 
 # =========== Task #2 ===========
 
+car_statuses = [
+	"ki",
+	"be"
+]
+
 user_input = input("Nap: ")
 
 for record in car_records: 
 	fields = record.strip().split()
 	if (fields[0] == user_input):
-		if (fields[5] == "0"):
-			car_out = fields[1] + fields[2] + fields[4] + "ki"
-			print (car_out)
-		elif (fields[5] == "1"): 
-			car_in = fields[1] + fields[2] + fields[4] + "be"
-			print (car_in)
-	
+		car_status = car_statuses[int(fields[5])]
+		car_out_string = fields[1] + fields[2] + fields[4] + str(car_status)
+		print(car_out_string)
