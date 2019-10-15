@@ -1,23 +1,22 @@
 #!/usr/bin/env python3
 
-autok_obj = open('autok.txt', 'r')
-autok_content = autok_obj.readlines()
-autok_obj.close()
+car_obj = open('autok.txt', 'r')
+car_records = car_obj.readlines()
+car_obj.close()
 
-#for record in autok_content:
-#	field = record.strip().split()[0]
-#	print(field)
-	# print(record.strip())
+# =========== Task #1 ===========
 
-visszahozott_autok = []
+car_returned_day = ''
+car_returned_id = ''
 
-for record in autok_content:
-	if (record.strip().split()[5] == 0):
-		visszahozott_auto = 
-		visszahozott_autok.append(record.strip())
-		print (visszahozott_autok)
+for record in car_records:
+	fields = record.strip().split()
+	if (fields[5] == "0"):
+		car_returned_day = fields[0]
+		car_returned_id = fields[2]
 
+if (car_returned_day != ''):
+	print (car_returned_day + ". nap rendszám: " + car_returned_id)
+else:
+	print ("Nincs ilyen autó")
 
-
-# iterálás az összes elemen (for…)
-# ha az adott record utolsó field-je = 0 => első field megjegyzése
