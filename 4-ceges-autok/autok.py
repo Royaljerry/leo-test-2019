@@ -55,16 +55,16 @@ car_kilometers ={}
 
 for record in car_records: 
 	fields = record.strip().split()
-	if (fields[2] in car_kilometers):
-		current = car_kilometers[fields[2]][0]
+	current_car = fields[2]
+	if (current_car in car_kilometers):
+		sum_km = car_kilometers[current_car][0]
 		if (fields[5]== 0):
-			car_kilometers.update(fields[2] = [current, int(fields[4])]
+			update_item = {current_car: [sum_km, int(fields[4])]}
 		else:
-			sum = int(fields[4] - current 
-			car_kilometers.update(fields[2] = [sum, 0])
+			sum = int(fields[4]) - sum_km
+			update_item = {current_car: [sum, 0]}
 	else:
-		car_kilometers.update({fields[2]: [0, int(fields[4])]}) 
+		update_item = {current_car: [0, int(fields[4])]}
+	car_kilometers.update(update_item)
 
 print(car_kilometers)
-
-
