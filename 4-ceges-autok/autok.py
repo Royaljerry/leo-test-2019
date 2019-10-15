@@ -20,3 +20,17 @@ if (car_returned_day != ''):
 else:
 	print ("Nincs ilyen autó")
 
+# =========== Task #2 ===========
+
+user_input = input("Nap: ")
+
+for record in car_records: 
+	fields = record.strip().split()
+	if (fields[0] == user_input):
+		if (fields[5] == "0"):
+			car_out = fields[1] + fields[2] + fields[4] + "ki"
+			print (car_out)
+		elif (fields[5] == "1"): 
+			car_in = fields[1] + fields[2] + fields[4] + "be"
+			print (car_in)
+	
