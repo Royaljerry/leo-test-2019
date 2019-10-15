@@ -42,9 +42,29 @@ cars_rented = []
 
 for record in car_records: 
 	fields = record.strip().split()
-
 	if (fields[5] == "0"): 
 		cars_rented.append(fields[2])
 	else: 
 		cars_rented.remove(fields[2])
+
 print ("A hónap végén " + str(len(cars_rented)) +" autót nem hoztak vissza.")
+
+# =========== Task #4 ===========
+
+car_kilometers ={}
+
+for record in car_records: 
+	fields = record.strip().split()
+	if (fields[2] in car_kilometers):
+		current = car_kilometers[fields[2]][0]
+		if (fields[5]== 0):
+			car_kilometers.update(fields[2] = [current, int(fields[4])]
+		else:
+			sum = int(fields[4] - current 
+			car_kilometers.update(fields[2] = [sum, 0])
+	else:
+		car_kilometers.update({fields[2]: [0, int(fields[4])]}) 
+
+print(car_kilometers)
+
+
